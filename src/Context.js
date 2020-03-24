@@ -20,11 +20,13 @@ const TheContext = props => {
     setCartItems(list);
   };
   const removeItemFromCart = id => {
-    console.log(id);
     const list = cartItems.filter(item => item.id !== id);
-    console.log(list);
     setCartItems(list);
   };
+
+  function emptyCart() {
+    setCartItems([]);
+  }
 
   useEffect(() => {
     fetch(
@@ -41,7 +43,8 @@ const TheContext = props => {
         toggleFavorite,
         cartItems,
         addItemToCart,
-        removeItemFromCart
+        removeItemFromCart,
+        emptyCart
       }}
     >
       {props.children}
