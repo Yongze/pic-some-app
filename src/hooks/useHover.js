@@ -18,7 +18,7 @@ const useHover = props => {
     };
   }, []);
 
-  return [hoverd, ref, updateHoverd];
+  return [hoverd, ref];
 };
 
 export default useHover;
